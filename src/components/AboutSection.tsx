@@ -105,7 +105,7 @@ export default function AboutSection() {
             
             <div className="mt-12 grid grid-cols-2 gap-8">
               <div>
-                <h5 className="text-3xl font-serif text-white mb-2"><Counter target={8} />+</h5>
+                <h5 className="text-3xl font-serif text-white mb-2">8+</h5>
                 <p className="text-sm uppercase tracking-widest text-subtleGold">Years Experience</p>
               </div>
               <div>
