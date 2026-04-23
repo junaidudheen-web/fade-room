@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Why Fade Room</h4>
             <blockquote className="text-platinumSilver/70 text-base font-serif italic leading-loose relative px-4 border-l-2 border-subtleGold">
-              "Great grooming isn’t just about how you look—it’s about how you feel. At Fade Room, we don’t just cut hair; we craft confidence."
+              &quot;Great grooming isn’t just about how you look—it’s about how you feel. At Fade Room, we don’t just cut hair; we craft confidence.&quot;
             </blockquote>
           </div>
         </div>
