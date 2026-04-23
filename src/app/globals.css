@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground: #E5E4E2;
+    --background: #0B0B0B;
+  }
+
+  body {
+    @apply bg-[#0B0B0B] text-[#E5E4E2] antialiased overflow-x-hidden selection:bg-[#D4AF37] selection:text-[#0B0B0B];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
