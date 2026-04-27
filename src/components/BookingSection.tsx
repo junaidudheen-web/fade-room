@@ -17,6 +17,9 @@ export default function BookingSection() {
   const [fullName, setFullName] = useState('');
   const [place, setPlace] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [serviceCharge, setServiceCharge] = useState('');
+  const [advance, setAdvance] = useState('');
+
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -66,7 +69,12 @@ export default function BookingSection() {
 
 *Client Details:*
 *Name:* ${fullName || 'Not specified'}
-*Phone:* ${phoneNumber || 'Not specified'}`;
+*Phone:* ${phoneNumber || 'Not specified'}
+
+*Payment Details:*
+*Service Charge:* ${serviceCharge || 'Not specified'}
+*Advance Amount:* ${advance || 'Not specified'}`;
+
 
     const whatsappUrl = `https://wa.me/917907585260?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -197,7 +205,6 @@ export default function BookingSection() {
                       <option key={state} value={state}>{state}</option>
                     ))}
                   </select>
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-platinumSilver/50 group-hover:text-subtleGold pointer-events-none" />
                 </div>
               </div>
 
@@ -217,6 +224,7 @@ export default function BookingSection() {
                 </div>
               </div>
             </div>
+
 
             {/* Contact Details */}
             <div>
@@ -244,6 +252,43 @@ export default function BookingSection() {
                />
             </div>
 
+            {/* Payment Section */}
+            <div className="pt-6 border-t border-white/5">
+              <label className="block text-xs uppercase tracking-widest text-subtleGold mb-1">Payment Details</label>
+              <p className="text-[10px] text-platinumSilver/40 uppercase tracking-widest mb-4">
+                * If you have already discussed the payment details, kindly complete the fields below:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Service Charge */}
+                <div>
+                  <label className="block text-xs uppercase tracking-widest text-subtleGold mb-2">Service Charge</label>
+                  <div className="relative">
+                    <input 
+                      type="text" 
+                      placeholder="As agreed"
+                      value={serviceCharge} onChange={(e) => setServiceCharge(e.target.value)}
+                      className="w-full bg-matteBlack border border-white/10 text-white p-4 focus:outline-none focus:border-subtleGold transition-colors placeholder:text-white/20 rounded-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Advance Amount */}
+                <div>
+                  <label className="block text-xs uppercase tracking-widest text-subtleGold mb-2">Advance Amount</label>
+                  <div className="relative">
+                    <input 
+                      type="text" 
+                      placeholder="As agreed"
+                      value={advance} onChange={(e) => setAdvance(e.target.value)}
+                      className="w-full bg-matteBlack border border-white/10 text-white p-4 focus:outline-none focus:border-subtleGold transition-colors placeholder:text-white/20 rounded-none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
             <motion.button
               type="submit"
               whileHover={{ scale: 1.02 }}
@@ -256,6 +301,10 @@ export default function BookingSection() {
             <p className="text-[10px] text-platinumSilver/40 text-center mt-3 uppercase tracking-wider">
               * Travel charges may apply for locations beyond 15 km from our service area.
             </p>
+            <p className="text-[10px] text-subtleGold text-center mt-2 uppercase tracking-wider font-semibold">
+              * After making the advance payment, please send the transaction screenshot to confirm your booking.
+            </p>
+
           </form>
             </div>
           </div>
